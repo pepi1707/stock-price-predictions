@@ -25,6 +25,7 @@ psycopg2 = "*"
 pyyaml = "*"
 matplotlib = "*"
 seaborn = "*"
+ta-lib = "*"
 
 [requires]
 python_version = "3.8"
