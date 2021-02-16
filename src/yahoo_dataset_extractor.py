@@ -26,6 +26,12 @@ all_stocks = []
 
 for ticket in tickets:
     x = DataReader(ticket, 'yahoo', start, end)
+    dates = x.index.copy()
+    normed_dates = np.ndarray((len(dates)), dtype=np.int32)
+    for i, dd in enumerate(dates):
+        normed_dates[i] = dd.weekday()
+    for i in range(5):
+        x['day-'+str(i)] = (normed_dates == i) * 1
     print(len(all_stocks))
     all_stocks.append(x)
 
